@@ -1,0 +1,19 @@
+/*
+Name: Danielle Horn
+Date: 20Sep2018
+Most Recent Revision:
+*/
+
+
+nav .btn{border-radius: 16px; border:pink solid;
+   padding-top: 6px; padding-bottom: 6px; background-color: lightblue;
+   color:blue;}
+nav .btn:link{color:blue; font-size: 14pt; font-family:Arial; text-decoration:underline;}
+nav .btn:visited{color:purple; border-radius: 16px; border:pink solid;
+      padding-top: 6px; padding-bottom: 6px; background-color: lightblue;}
+nav .btn:hover{font-weight:bold;}
+nav .btn:active{text-decoration:none;}
+   i:link{color:blue;}
+   i:visited{color:purple}
+   i:hover{font-weight:bold;}
+   i:active{text-decoration:none;}

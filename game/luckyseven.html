@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+Name: Danielle Horn
+Date: 21Sep2018
+Most Recent Revision:
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lucky Sevens</title>
+    <link re="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+<style>
+h1{background-color:pink; color:purple; font-family:Arial; font-size:30pt;}
+#results{color:purple; font-family:Arial; font-size:12pt; }
+h2{background-color:purple; color:pink; font-family:Arial; font-size:20pt;}
+#start{color:purple; font-family:Arial; font-size:20pt;}
+#betInput{color:black; font-family:Arial; background-color:white; font-size:20pt;}
+#playButton{border-radius: 16px; border:pink dotted thick; padding-top: 6px;
+            padding-bottom:6px; color:pink; background-color:purple; font-family:Arial; font-size:20pt;}
+</style>
+</head>
+<body onload="hideResults()">
+<script>
+function hideResults() {
+    document.getElementById("results").style.display = "none";
+}
+
+function play() {
+    var startingBet = document.getElementById("betInput").value;
+    var bet = startingBet;
+    if (bet <=0){
+      alert("Bet must be greater than $0.00");
+      return false;
+    }
+    var betsArray = [];
+
+    while (bet > 0) {
+      var dice1 = Math.floor(Math.random() * 6) + 1;
+      var dice2 = Math.floor(Math.random() * 6) + 1;
+      var diceRoll = dice1 + dice2;
+        if(diceRoll != 7) {
+            bet -= 1
+        } else {
+            bet += 4
+        }
+        betsArray.push(bet)
+    }
+
+
+
+    var rollCounter = betsArray.length;
+    var highestAmount = Math.max.apply(Math, betsArray);
+    var highestPosition = betsArray.indexOf(highestAmount);
+    var rollsFromHighest = rollCounter - highestPosition;
+
+    function showResults() {
+    document.getElementById("results").style.display = "inline";
+    document.getElementById("playButton").innerHTML = "Play Again";
+    document.getElementById("resultsBet").innerHTML = "$" + startingBet +".00";
+    document.getElementById("resultsRollCounter").innerHTML = rollCounter;
+    document.getElementById("resultsHighestHeld").innerHTML = "$" +     highestAmount + ".00";
+    document.getElementById("resultsRollsFromHighest").innerHTML = rollsFromHighest;
+    };
+
+    showResults();
+}
+</script>
+<div id="gameDiv">
+    <center><h1>Lucky Sevens</h1></center>
+    <center><span id="start">Starting Bet:<input type="number" name="Starting Bet" id="betInput" placeholder="$0.00"></span></center>
+        <br/>
+            <center><button onclick="play()" id="playButton" class="btn btn-pill"><em>Play!</em></button></center>
+        </form>
+    </div>
+
+<hr />
+   <div id="results">
+        <table align="center">
+        <center><caption><h2>Results</h2></caption></center>
+            <tr>
+                <td>Starting Bet:</td>
+                <td id="resultsBet"></td>
+            </tr>
+            <tr>
+                <td>Total Rolls Before Going Broke:</td>
+                <td id="resultsRollCounter"></td>
+            </tr>
+            <tr >
+                <td>Highest Amount Won:</td>
+                <td id="resultsHighestHeld"></td>
+            </tr>
+            <tr>
+                <td>Roll Count at Highest Amount Won:</td>
+                <td id="resultsRollsFromHighest"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<!--
+Name: Danielle Horn
+Date: 20Sep2018
+Most Recent Revision:
+-->
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Menu</title>
+    <link re="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+    <link href="styles/navstyles.css" rel="stylesheet" type="text/css" />
+
+    <style>
+    body{ background-color: yellow;}
+    #restaurant{font-family:Arial; font-size:40pt;}
+    th{font-size: larger;}
+
+body {
+  font-family: 'Droid Serif', serif;
+
+}
+
+h1 {
+  font-size: 16px;
+  text-align: center;
+}
+
+.content-slider {
+  width: 100%;
+  height: 90px;
+  background-color:purple;
+  color:lightblue;
+}
+
+.slider {
+  height: 50px;
+  width: 300px;
+  margin: 5px auto 0;
+  overflow: visible;
+  position: relative;
+}
+
+.mask {
+  overflow: hidden;
+  height: 50px;
+}
+
+.slider ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.slider li {
+  width: 300px;
+  height: 50px;
+  position:absolute;
+  top: -325px;
+  list-style: none;
+}
+
+.slider .quote {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.slider li.anim1 {
+  -moz-animation: cycle 15s linear infinite;
+  -webkit-animation: cycle 15s linear infinite;
+  animation: cycle 15s linear infinite;
+}
+
+.slider li.anim2 {
+  -moz-animation: cycle2 15s linear infinite;
+  -webkit-animation: cycle2 15s linear infinite;
+  animation: cycle2 15s linear infinite;
+}
+
+.slider li.anim3 {
+  -moz-animation: cycle3 15s linear infinite;
+  -webkit-animation: cycle3 15s linear infinite;
+  animation: cycle3 15s linear infinite;
+}
+
+.slider:hover li {
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@-moz-keyframes cycle {
+  0% {
+    top: 0px;
+  }
+  4% {
+    top: 0px;
+  }
+  16% {
+    top: 0px;
+    opacity: 1;
+    z-index: 0;
+  }
+  20% {
+    top: 325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  21% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+  92% {
+    top: -325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  96% {
+    top: -325px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes cycle2 {
+  0% {
+    top: -325px;
+    opacity: 0;
+  }
+  16% {
+    top: -325px;
+    opacity: 0;
+  }
+  20% {
+    top: 0px;
+    opacity: 1;
+  }
+  24% {
+    top: 0px;
+    opacity: 1;
+  }
+  36% {
+    top: 0px;
+    opacity: 1;
+    z-index: 0;
+  }
+  40% {
+    top: 325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  41% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+  100% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@-moz-keyframes cycle3 {
+  0% {
+    top: -325px;
+    opacity: 0;
+  }
+  36% {
+    top: -325px;
+    opacity: 0;
+  }
+  40% {
+    top: 0px;
+    opacity: 1;
+  }
+  44% {
+    top: 0px;
+    opacity: 1;
+  }
+  56% {
+    top: 0px;
+    opacity: 1;
+  }
+  60% {
+    top: 325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  61% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+  100% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@-webkit-keyframes cycle {
+  0% {
+    top: 0px;
+  }
+  4% {
+    top: 0px;
+  }
+  16% {
+    top: 0px;
+    opacity: 1;
+    z-index: 0;
+  }
+  20% {
+    top: 325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  21% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+  50% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+  92% {
+    top: -325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  96% {
+    top: -325px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cycle2 {
+  0% {
+    top: -325px;
+    opacity: 0;
+  }
+  16% {
+    top: -325px;
+    opacity: 0;
+  }
+  20% {
+    top: 0px;
+    opacity: 1;
+  }
+  24% {
+    top: 0px;
+    opacity: 1;
+  }
+  36% {
+    top: 0px;
+    opacity: 1;
+    z-index: 0;
+  }
+  40% {
+    top: 325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  41% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+  100% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@-webkit-keyframes cycle3 {
+  0% {
+    top: -325px;
+    opacity: 0;
+  }
+  36% {
+    top: -325px;
+    opacity: 0;
+  }
+  40% {
+    top: 0px;
+    opacity: 1;
+  }
+  44% {
+    top: 0px;
+    opacity: 1;
+  }
+  56% {
+    top: 0px;
+    opacity: 1;
+    z-index: 0;
+  }
+  60% {
+    top: 325px;
+    opacity: 0;
+    z-index: 0;
+  }
+  61% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+  100% {
+    top: -325px;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    </script>
+    <noscript>JavaScript is off. For best viewing, please enable JavaScript.</noscript>
+<script>
+
+
+</script>
+    <main>
+      <center><header class="jumbotron">
+        <h1 id="restaurant">Tony's Kitchen</h1>
+        <h2>Try Our Famous Brisket Sandwich!</h2>
+        <hr />
+      </center></header>
+      <nav>
+        <!--home, menu, contact-->
+        <p><a id="home"class="btn btn-pill" href="index.html"><i class="fa fa-home"></i></a>
+           <a id="menu" class="btn btn-pill" href="menu.html">Menu</a>
+           <a id="contact" class="btn btn-pill" href="contact.html">Contact Us</a></p>
+      </nav>
+      <hr />
+<!--carousel-->
+
+
+<div class="content-slider">
+  <div class="slider">
+    <div class="mask">
+      <ul>
+        <li class="anim1">
+          <div class="quote">We're opening a new location!</div>
+        </li>
+        <li class="anim2">
+          <div class="quote">We're rolling out our seasonal menu, with special options for this season.</div>
+        </li>
+        <li class="anim3">
+          <div class="quote">The Drink of the Month is SG Special Brew.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="container">
+<!--put the menu items here-->
+<div class="row">
+  <div class="col-lg-9">
+          <table width="95%">
+            <tr align="center">
+              <th>Burger and Fries</th>
+              <th>Hot Dog and Chips</th>
+              <th>Italian Sausage and Peppers</th>
+            </tr>
+            <tr align="center">
+              <td>An American Classic!<br />
+              Your choice - with or without cheese<br />
+              Pickle, onion, tomato, and lettuce<br />
+              Served with our famous thick cut<br />
+              french fries<br />
+              $7.95</td>
+              <td>A Summer Classic!<br />
+              Your choice - white or wheat bun<br />
+              Relish, mustard, and ketchup<br />
+              Served with our house-made chips<br />
+              $7.95<br /><br /></td>
+              <td>An All-Time Favorite!<br />
+              Your choice - mild or spicy Cole Slaw<br />
+              Served with garlic mashers<br />
+              $10.95<br /><br /><br /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-9">
+          <table width="95%">
+            <tr>
+              <th>Tenderloin Sandwich and Chips</th>
+              <th>House Salad</th>
+              <th>Brisket Sandwich and Fries</th>
+            </tr>
+            <tr align="center">
+              <td>Really Hits the Spot!<br />
+              Plain or Sesame Seed Bun<br />
+              Pickle, onion, tomato, and lettuce<br />
+              Served with our house-made chips<br />
+              $8.95<br /><br /><br /></td>
+              <td>On the Lighter Side<br />
+              Your choice - with or without cheese<br />
+              Iceberg lettuce, tomatoes, peppers<br />
+              Thousand Island or Ranch Dressing<br />
+              Served with a dinner roll<br />
+              $6.95<br />
+              <br /></td>
+              <td>A Taste of Texas!<br />
+              Smoked Brisket on thick-cut<br />
+              Texas Toast<br />
+              Cole Slaw<br />
+              Served with our famous thick-cut<br />
+              french fries<br />
+              $7.95</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+        <table width: "90%" align="center">
+          <tr>
+            <th colspan="2">Beverages</th>
+          </tr>
+          <tr>
+            <td>Root Beer</td>
+            <td>$3.00</td>
+          </tr>
+          <tr>
+            <td>Bottled Water</td>
+            <td>$1.25</td>
+          </tr>
+          <tr>
+            <td>Lemonade</td>
+            <td>$1.00</td>
+          </tr>
+          <tr>
+            <td>Iced Tea</td>
+            <td>$1.25</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+      </section>
+      <hr />
+      <center><footer>
+        <!--street, city, state, zip   break  phone number-->
+        123 S College Rd, Fredericksburg, Texas, 39208<br />
+        320-543-8934
+      </footer></center>
+    </main>
+  </body>
+</html>
